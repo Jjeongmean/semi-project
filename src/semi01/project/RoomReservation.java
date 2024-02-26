@@ -8,7 +8,7 @@ public class RoomReservation {
     protected String RoomType; // 예약할 룸(룸 타입)
     int Limit; // 인원제한
     int Price; // 가격(1박)
-
+    public double Discount; // 할인율(3박이상 예약시)
 
 
     //생성자
@@ -25,6 +25,7 @@ public class RoomReservation {
         RoomType = "SINGLE";
         Price = 100000;
         Limit = 1;
+        this.Discount = 0;
     }
 
     public String getGuestName() {
@@ -67,10 +68,11 @@ public class RoomReservation {
         Price = price;
     }
 
-    public void date() {
-    }
     public void reservationData() {
         System.out.println("룸 이름: " + getRoomType() + "," + "예약일수: " + getReserveDate()  );
     }
 
+    public int calc() {
+        return getPrice() * getReserveDate() - (int)(getPrice() * getReserveDate() * Discount);
+    }
 }

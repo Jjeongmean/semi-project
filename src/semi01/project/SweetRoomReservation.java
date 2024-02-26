@@ -2,7 +2,6 @@ package semi01.project;
 
 public class SweetRoomReservation extends RoomReservation{
     String BreakfastFree; // 조식무료제공(스위트만)
-    double Discount; // 할인율(3박이상 예약시)
 
     public SweetRoomReservation(String GuestName, int ReserveDate) {
         super(GuestName, ReserveDate);
@@ -13,6 +12,14 @@ public class SweetRoomReservation extends RoomReservation{
         this.BreakfastFree = "제공합니다.";
     }
 
+    public double getDiscount() {
+        return Discount;
+    }
+
+    public void setDiscount(double discount) {
+        Discount = discount;
+    }
+
     @Override
     public void reservationData() {
         System.out.println("룸 이름: " + getRoomType() + "," + "예약일수: " + getReserveDate() + "," + "조식여부: " + getBreakfastFree());
@@ -20,6 +27,5 @@ public class SweetRoomReservation extends RoomReservation{
     }
 
     public String getBreakfastFree() {return BreakfastFree;}
-
 
 }
