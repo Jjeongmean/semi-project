@@ -24,6 +24,7 @@ public class RoomReservation {
     private void initReserve() {
         RoomType = "SINGLE";
         Price = 100000;
+        Limit = 1;
     }
 
     public String getGuestName() {
@@ -57,4 +58,19 @@ public class RoomReservation {
     public void setLimit(int limit) {
         Limit = limit;
     }
+
+    public int getPrice() {
+        return Price;
+    }
+
+    public void setPrice(int price) {
+        Price = price;
+    }
+
+    public void date() {
+    }
+    public void reservationData() {
+        System.out.println("룸 이름: " + getRoomType() + "," + "예약일수: " + getReserveDate()  );
+    }
+
 }
